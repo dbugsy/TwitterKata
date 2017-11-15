@@ -10,6 +10,22 @@
     "test": "jest"
   },
   "jest": {
-    "verbose": true
-  }
+    "verbose": true,
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.jsx?$"
+  },
+  "name": "twitterkata",
+  "version": "1.0.0",
+  "description": "social network kata",
+  "main": "index.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbugsy/TwitterKata.git"
+  },
+  "author": "dbugsy <dpbergquist@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbugsy/TwitterKata/issues"
+  },
+  "homepage": "https://github.com/dbugsy/TwitterKata#readme"
 }

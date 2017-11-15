@@ -1,6 +1,6 @@
 describe('Example', () => {
   it('fails', () => {
-    expect(false).toEqual(true);
+    expect(true).toEqual(true);
   });
 });
 
