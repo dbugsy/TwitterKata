@@ -3,21 +3,18 @@
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.2.0",
-    "jest": "^21.2.1"
+    "eslint-plugin-jest": "^21.2.0"
   },
   "scripts": {
-    "test": "jest"
-  },
-  "jest": {
-    "verbose": true,
-    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.jsx?$"
+    "test": "mocha"
   },
   "name": "twitterkata",
   "version": "1.0.0",
   "description": "social network kata",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "jest": "^21.2.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dbugsy/TwitterKata.git"
