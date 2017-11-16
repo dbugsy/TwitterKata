@@ -55,10 +55,3 @@ wall: <user name> wall
 - Provide instructions on how to run the application.
 
 IMPORTANT: Focus on writing the best code you can produce. Do not rush. Take as much time as you need; there is no deadline.
-
-## Instructions on how to run the application
-
-### Requirements
-
-- [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Maven](https://maven.apache.org/download.cgi)  
