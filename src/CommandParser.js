@@ -8,7 +8,7 @@ const CommandParser = {
   parse: commandString => ({
     subject: subjectFrom(commandString),
     verb: verbFrom(commandString),
-    object: objectFrom(commandString)
+    object: objectFrom(commandString),
   }),
 };
 
