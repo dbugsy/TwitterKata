@@ -1,9 +1,15 @@
 const readline = require('readline');
+const TwitterController = require('./TwitterController');
 
-class Console {
-  constructor(stdin = process.stdin, stdout = process.stdout) {
+class TwitterConsole {
+  constructor(
+    stdout = process.stdout,
+    stdin = process.stdin,
+    controller = new TwitterController(),
+  ) {
     this.stdin = stdin;
     this.stdout = stdout;
+    this.controller = controller;
   }
 
   run() {
@@ -12,14 +18,24 @@ class Console {
       output: this.stdout,
     });
 
-    this.stream.question('> ', (answer) => {
-      this.stop();
+    this.stream.on('line', (line) => {
+      console.log(line);
     });
   }
 
   stop() {
     this.stream.close();
   }
+
+  prompt() {
+    this.stream.question('> ', (answer) => {
+      this.controller.input(answer);
+    });
+  }
+
+  output(message) {
+    console.log(message);
+  }
 }
 
-module.exports = Console;
+module.exports = TwitterConsole;
