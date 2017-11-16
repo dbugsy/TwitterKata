@@ -1,7 +1,7 @@
 const readline = require('readline');
-const TwitterController = require('./TwitterController');
+const TwitterController = require('./Twitter');
 
-class TwitterConsole {
+class Console {
   constructor(
     stdout = process.stdout,
     stdin = process.stdin,
@@ -33,9 +33,9 @@ class TwitterConsole {
     });
   }
 
-  output(message) {
+  output(message) { // eslint-disable-line class-methods-use-this
     console.log(message);
   }
 }
 
-module.exports = TwitterConsole;
+module.exports = Console;

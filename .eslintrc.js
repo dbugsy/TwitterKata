@@ -13,7 +13,9 @@ module.exports = {
           "args": "none",
       }
     ],
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "no-use-before-define": ["error", { "functions": false }],
+    "class-methods-use-this": ["warn"]
   },
   "env": {
     "jest/globals": true

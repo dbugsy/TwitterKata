@@ -1,4 +1,5 @@
-const TwitterController = require('../../src/TwitterController');
+const TwitterController = require('../../src/Twitter');
+const User = require('../../src/User');
 
 describe('returning and empty timeline', () => {
   it('returns a new prompt with no additional output', () => {

@@ -1,10 +1,13 @@
+const CommandFactory = require('./CommandFactory');
+
 class Twitter {
-  constructor(commandParser) {
-    this.commandParser = commandParser;
+  constructor(commandFactory = new CommandFactory()) {
+    this.commandParser = commandFactory;
   }
 
-  input(){
-
+  input(commandString) {
+    const command = this.commandParser.build(commandString);
+    command.execute();
   }
 }
 
