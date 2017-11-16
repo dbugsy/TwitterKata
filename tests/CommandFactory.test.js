@@ -4,6 +4,8 @@ const NewMessageCommand = require('../src/commands/NewMessageCommand');
 const FollowUserCommand = require('../src/commands/FollowUserCommand');
 
 describe('CommandFactory', () => {
+  const message = 'some message';
+
   it('creates a new getTimeline command', () => {
     const expectedCommandType = GetTimelineCommand;
     const user = 'Alice';
@@ -12,11 +14,7 @@ describe('CommandFactory', () => {
       verb: '',
       object: '',
     };
-    const MockCommandParser = jest.fn(() => ({
-      parse: jest.fn().mockReturnValue(commandObject),
-    }));
-    const commandFactory = new CommandFactory(new MockCommandParser());
-    const message = 'some message';
+    const commandFactory = new CommandFactory(mockCommandParser(commandObject));
 
     expect(commandFactory.build(message)).toBeInstanceOf(expectedCommandType);
   });
@@ -29,11 +27,7 @@ describe('CommandFactory', () => {
       verb: '->',
       object: 'I love the weather today',
     };
-    const MockCommandParser = jest.fn(() => ({
-      parse: jest.fn().mockReturnValue(commandObject),
-    }));
-    const commandFactory = new CommandFactory(new MockCommandParser());
-    const message = 'some message';
+    const commandFactory = new CommandFactory(mockCommandParser(commandObject));
 
     expect(commandFactory.build(message)).toBeInstanceOf(expectedCommandType);
   });
@@ -47,13 +41,16 @@ describe('CommandFactory', () => {
       verb: 'follows',
       object: followee,
     };
-    const MockCommandParser = jest.fn(() => ({
-      parse: jest.fn().mockReturnValue(commandObject),
-    }));
-    const commandFactory = new CommandFactory(new MockCommandParser());
-    const message = 'some message';
+    const commandFactory = new CommandFactory(mockCommandParser(commandObject));
 
     expect(commandFactory.build(message)).toBeInstanceOf(expectedCommandType);
   });
+
+  function mockCommandParser(commandObject) {
+    const MockCommandParser = jest.fn(() => ({
+      parse: jest.fn().mockReturnValue(commandObject),
+    }));
+    return new MockCommandParser();
+  }
 });
 
