@@ -1,3 +1,4 @@
+![travis build](https://travis-ci.org/dbugsy/TwitterKata.svg?branch=master)
 # Exercise
 Implement a console-based social networking application (similar to Twitter) satisfying the scenarios below.
 
