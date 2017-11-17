@@ -6,11 +6,11 @@ const FollowUserCommand = require('./commands/FollowUserCommand');
 
 class CommandFactory {
   constructor(commandParser = CommandParser) {
-    this.commandParser = commandParser;
+    this.commandFactory = commandParser;
   }
 
   build(input) {
-    const instructions = this.commandParser.parse(input);
+    const instructions = this.commandFactory.parse(input);
     switch (instructions.verb) {
       case 'follows':
         return new FollowUserCommand(instructions.subject, instructions.object);

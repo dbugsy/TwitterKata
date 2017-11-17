@@ -10,11 +10,14 @@ describe('Twitter', () => {
     const build = jest.fn().mockReturnValue(command);
     const commandFactory = newMock({ build });
 
-    const twitter = new Twitter(commandFactory);
+    const messageRepo = jest.fn();
 
-    twitter.input(commandString);
+    const twitter = new Twitter(commandFactory, messageRepo);
+    const twitterConsole = jest.fn();
 
-    expect(command.execute).toHaveBeenCalled();
+    twitter.input(commandString, twitterConsole);
+
+    expect(command.execute).toHaveBeenCalledWith(twitterConsole, messageRepo);
   });
 
   function newMock(executable) {

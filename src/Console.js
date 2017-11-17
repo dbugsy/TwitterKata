@@ -28,8 +28,9 @@ class Console {
   }
 
   prompt() {
+    const self = this;
     this.stream.question('> ', (answer) => {
-      this.controller.input(answer);
+      this.controller.input(answer, self);
     });
   }
 
